@@ -1,0 +1,124 @@
+:root {
+    --bg-dark: #0a0a0a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --neon-cyan: #00f2fe;
+    --neon-purple: #4facfe;
+    --text-main: #e0e0e0;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo { font-size: 1.8rem; font-weight: 800; color: #fff; }
+.logo span { color: var(--neon-cyan); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links a { 
+    text-decoration: none; color: #bbb; transition: var(--transition);
+}
+.nav-links a:hover { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.neon-text {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+}
+
+h1 { font-size: 4rem; margin-bottom: 1rem; }
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 50px 10%;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+}
+
+.skill-card i { font-size: 3rem; margin-bottom: 15px; color: var(--neon-cyan); }
+
+/* Data Viz Section */
+.viz-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 10%;
+    align-items: center;
+}
+
+.glass-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.viz-icon { font-size: 5rem; color: var(--neon-purple); margin-bottom: 20px; }
+
+/* Scroll Reveal Effect */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title { text-align: center; font-size: 2.5rem; margin-top: 80px; }
